@@ -5,7 +5,7 @@ import { Message as messageModel } from "./model.js";
 const app = express();
 app.use(cors())
 app.get("/message", async (request, response) => {
-  const message = await messageModel.find({}).limit(25);
+  const message = await messageModel.find().sort({_id:-1}).limit(50);
 
   try {
     response.send(message);

@@ -1,27 +1,44 @@
 import ChartJs from "./chart";
 import { getApi, getDateApi, getTemperatureApi } from "../data/api-data";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ChartTemperature = () => {
-	const [labels, setLabels] = useState(['']);
-	const [temperature, setTemperature] = useState('');
+	const [isLoading, setIsLoading] = useState(true);
+	const [chartData, setChartData] = useState({});
 
-	setInterval(async () => {
-		let dataApi = await getApi();
-		setLabels(getDateApi(dataApi));
-		setTemperature(getTemperatureApi(dataApi));
+	function getChartData() {
+		getApi().then((dataApi) => {
+			let labels = getDateApi(dataApi);
+			let data = getTemperatureApi(dataApi);
 
-		console.log(labels);
-		console.log(temperature);
-	}, 5000);
-	return (
-		<ChartJs
-			titleJson={"Temperature"}
-			labelsJson={labels}
-			dataJson={temperature}
-			colorRgb={"255, 99, 132"}
-		/>
-	);
+			setChartData({
+				labels: labels,
+				datasets: [
+					{
+						label: "Temperature",
+						data: data,
+						borderColor: 'rgb(255, 99, 132)',
+						backgroundColor: 'rgb(255, 99, 132, 0.6)',
+					},
+				],
+			});
+			
+			setIsLoading(false);
+		});
+	}
+
+	function updatingApi() {
+		setInterval(() => {
+			getChartData();
+		}, 5000);
+	}
+
+	useEffect(() => {
+		getChartData();
+		updatingApi();
+	});
+
+	return <div>{isLoading ? null : <ChartJs data={chartData} />}</div>;
 };
 
 export default ChartTemperature;

@@ -1,15 +1,13 @@
+
 import axios from "axios";
 
 async function getApi() {
-	let dataApi;
-	await axios
+	let data = await axios
 		.get("http://localhost:9000/message", {
 			headers: { "Access-Control-Allow-Origin": "*" },
 		})
-		.then(function (response) {
-			dataApi = response.data;
-		});
-	return dataApi;
+		.then((res) => res.data);
+	return data;
 }
 
 function getDateApi(dataApi) {
