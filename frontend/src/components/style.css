@@ -1,0 +1,26 @@
+/* Buttons */
+.button-chart {
+	padding: 20px;
+	border: none;
+}
+
+#button-temperature {
+	background-color: rgba(255, 99, 132, 0.5);
+}
+
+#button-humidity {
+	background-color: rgba(53, 162, 235, 0.5);
+}
+
+/* Container */
+.container {
+	display: flex;
+}
+#container-buttons-chart {
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+}
+#container-chart {
+	width: 80%;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "jac-aws-iot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@auth0/s3": "^1.0.0",
+    "aws-iot-device-sdk": "^2.2.12",
+    "aws-sdk": "^2.1295.0",
+    "bluebird": "^3.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.4",
+    "multer": "*"
+  }
+}
