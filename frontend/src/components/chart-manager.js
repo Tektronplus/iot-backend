@@ -5,7 +5,7 @@ import "./style.css";
 import { Alarm } from "./alarm";
 
 const ChartManager = () => {
-	const [chartShown, setChartShown] = useState("");
+	const [chartShown, setChartShown] = useState("temperature");
 
 	return (
 		<div>
