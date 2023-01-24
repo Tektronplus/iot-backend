@@ -21,5 +21,15 @@ const MessageSchema = new mongoose.Schema({
   },
 });
 
+const AlarmSchema = new mongoose.Schema({
+  timestamp: {
+    type: Number,
+  },
+  isAlarm: {
+    type: Boolean,
+  }
+})
+
 const Message = mongoose.model("Message", MessageSchema);
-export { Message };
+const Alarm = mongoose.model("Alarm", AlarmSchema)
+export { Message, Alarm };

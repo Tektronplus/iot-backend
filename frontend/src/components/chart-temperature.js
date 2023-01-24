@@ -7,7 +7,7 @@ const ChartTemperature = () => {
 	const [chartData, setChartData] = useState({});
 
 	function getChartData() {
-		getApi().then((dataApi) => {
+		getApi("http://localhost:9000/messages").then((dataApi) => {
 			let labels = getDateApi(dataApi);
 			let data = getTemperatureApi(dataApi);
 

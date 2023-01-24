@@ -1,5 +1,4 @@
 import { usernameMongoDB, passwordMongoDB } from "../config.js";
-
 import express from "express";
 import mongoose from "mongoose";
 

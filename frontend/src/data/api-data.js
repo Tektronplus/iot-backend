@@ -1,9 +1,9 @@
 
 import axios from "axios";
 
-async function getApi() {
+async function getApi(url) {
 	let data = await axios
-		.get("http://localhost:9000/message", {
+		.get(url, {
 			headers: { "Access-Control-Allow-Origin": "*" },
 		})
 		.then((res) => res.data);

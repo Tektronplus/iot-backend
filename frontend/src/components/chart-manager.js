@@ -2,6 +2,7 @@ import { useState } from "react";
 import ChartTemperature from "./chart-temperature";
 import ChartHumidity from "./chart-humidity";
 import "./style.css";
+import { Alarm } from "./alarm";
 
 const ChartManager = () => {
 	const [chartShown, setChartShown] = useState("");
@@ -32,6 +33,7 @@ const ChartManager = () => {
 					<ChartHumidity />
 				)}
 			</div>
+			<Alarm/>
 		</div>
 	);
 };
