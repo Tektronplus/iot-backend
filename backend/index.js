@@ -16,7 +16,7 @@ await initMongoDB();
 
 /*
     Use fakeMessageEmitor() to simulate the logs of ESP32.
-    When there is a real sensor on AWS Iot use initDevice.
+    When there is a real sensor on AWS Iot use initDevice().
 */
 //await initDevice();
 fakeMessageEmitor();

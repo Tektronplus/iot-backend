@@ -1,18 +1,20 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
-#container-components{
-  display: grid;
-  grid-template-columns: 80% 20%;
-  grid-template-rows: 100%;
-  grid-template-areas: "chart alarm";
+#container-components {
+	padding: 20px;
+
+	display: grid;
+	grid-template-columns: 80% 20%;
+	grid-template-rows: 100%;
+	grid-template-areas: "chart alarm";
 }
 
-#chart{
-  grid-area: "chart";
+#chart {
+	grid-area: "chart";
 }
 
-#alarm{
-  grid-area: "alarm";
+#alarm {
+	grid-area: "alarm";
 }

@@ -36,7 +36,7 @@ const ChartTemperature = () => {
 	useEffect(() => {
 		getChartData();
 		updatingApi();
-	});
+	}, []);
 
 	return <div>{isLoading ? null : <ChartJs data={chartData} />}</div>;
 };

@@ -1,5 +1,34 @@
+#alarm-manager {
+    height: 100vh;
 
-#alarm-manager{
-    max-height: 80vh;
-    overflow-y:auto;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 50px 1fr;
+	grid-template-areas:
+		"alert"
+		"alarms";
+    gap: 10px;
+}
+#alarm-alert {
+    grid-area: "alert";
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid black;
+    border-radius: 5px;
+
+    font-size: x-large;
+    font-weight: 800;
+}
+#subtitle-alarmlogs{
+    font-size: large;
+    font-weight: 700;
+}
+#alarm-container {
+    grid-area: "alarms";
+	overflow-y: auto;
+
+    border: 1px solid black;
 }

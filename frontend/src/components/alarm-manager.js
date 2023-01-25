@@ -27,12 +27,13 @@ const AlarmManager = () => {
 	useEffect(() => {
 		getAlarmData();
 		updatingApi();
-	});
+	}, []);
 
 	return (
-		<div>
-            {isAlarm ? <h1>Temperature over 20°</h1> : null}
-			<div id="alarm-manager">
+		<div id="alarm-manager">
+            <div id="alarm-alert" style={{"color": isAlarm ? "white" : "brown", "backgroundColor": isAlarm ? "red" : "darkred"}} >Temperature over 20°</div>
+			<div id="alarm-container">
+				<p id="subtitle-alarmlogs">Alarm logs</p>
 				{isLoading ? null : arrayAlarms.map((alarm) => <Alarm alarm={alarm} />)}
 			</div>
 		</div>

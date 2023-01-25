@@ -1,16 +1,15 @@
 import { useState } from "react";
 import ChartTemperature from "./chart-temperature";
 import ChartHumidity from "./chart-humidity";
-import "./style.css";
+import "./style-chart.css";
 
 const ChartManager = () => {
 	const [chartShown, setChartShown] = useState("temperature");
 
 	return (
 		<div>
-			<div
-				id="container-buttons-chart"
-				className="container">
+			<div id="container-title">CHART ESP32 - Davor Roman </div>
+			<div id="container-buttons-chart">
 				<button
 					id="button-temperature"
 					className="button-chart"

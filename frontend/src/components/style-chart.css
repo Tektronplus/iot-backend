@@ -1,0 +1,54 @@
+#chart-manager {
+	height: 100vh;
+
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 50px 200px 1fr;
+	grid-template-areas:
+		"title"
+		"buttons"
+		"chart";
+	gap: 10px;
+}
+/* Container */
+#container-title {
+	grid-area: "title";
+
+	font-size: xx-large;
+	font-weight: 900;
+}
+
+#container-buttons-chart {
+	grid-area: "buttons";
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+
+}
+
+#container-chart {
+	grid-area: "chart";
+	width: 100%;
+}
+
+/* Buttons */
+.button-chart {
+	border: 2px solid black;
+	border-radius: 5px;
+	padding: 10px;
+
+	color: white;
+	font-size: medium;
+	font-weight: 600;
+}
+
+#button-temperature {
+	background-color: red;
+}
+
+#button-humidity {
+	background-color: darkblue;
+}
