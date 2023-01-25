@@ -1,4 +1,3 @@
-
 import axios from "axios";
 
 async function getApi(url) {
